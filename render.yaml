@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: flask-tramites-api
+    env: python
+    buildCommand: ""
+    startCommand: "gunicorn app:app"
+    envVars:
+      - key: user
+        value: <to set in Render>
+      - key: password
+        value: <to set in Render>
+      - key: host
+        value: <to set in Render>
+      - key: port
+        value: <to set in Render>
+      - key: dbname
+        value: <to set in Render>
