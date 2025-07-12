@@ -31,7 +31,7 @@ def buscar_tramites(query):
     conn = conectar()
     cur = conn.cursor()
     like = f"%{query}%"
-    cur.execute("SELECT * FROM tramites WHERE titulo ILIKE %s OR descripcion ILIKE %s", (like, like))
+    cur.execute("SELECT titulo,descripcion,enlace,date_cierre FROM tramites WHERE titulo ILIKE %s OR descripcion ILIKE %s", (like, like))
     resultados = cur.fetchall()
     cur.close()
     conn.close()
