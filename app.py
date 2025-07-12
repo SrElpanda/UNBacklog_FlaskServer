@@ -35,7 +35,7 @@ def buscar_tramites(query):
     resultados = cur.fetchall()
     cur.close()
     conn.close()
-    return [{"titulo": t, "descripcion": d} for t, d in resultados]
+    return [{"titulo": t, "descripcion": d,"enlace": e, "date_cierre":dc } for t, d,e,dc in resultados]
 
 @app.route("/api/tramites")
 def tramites():
